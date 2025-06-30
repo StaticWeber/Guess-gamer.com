@@ -117,9 +117,8 @@
 @media screen and (min-width: 320px) and (max-width: 359px){
 
  .intro-container{
-    background-color: blue;
-    left: 5em;
-    top: 13em;
+    left: 3.5em;
+    top: 16em;
  }
 
  .box-container{
@@ -197,9 +196,8 @@
 @media screen and (min-width: 375px) and (max-width: 413px){
 
 .intro-container{
-    background-color: green;
-    left: 2.5em;
-    top: 13em;
+    left: 3.5em;
+    top: 16em;
  }
 
  .box-container{
@@ -240,9 +238,8 @@
 @media screen and (min-width: 414px) and (max-width: 436px){
 
  .intro-container{
-    background-color: orange;
-    left: 4.3em;
-    top: 13em;
+    left: 5.5em;
+    top: 17em;
  }
 
  .box-container{
