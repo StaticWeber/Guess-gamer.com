@@ -289,7 +289,6 @@ function Game(){
             </nav>
 
             <main>
-                 <meta name="google-site-verification" content="pRfwXvrrxCxsnAPEHEMAhV31oKCPawgyOmBH_yIMmPc" />
                 <div className="box-container" style={{display: displayComponent1 }}>
                   <h4 id="guide">Quick guide: <br/> Guess the next color.
                   <br/> Avoid tapping one color box repeatedly.
