@@ -37,7 +37,7 @@
 
 .nav-bar ul li a{
     text-decoration: none;
-    color: black;
+    color: purple;
 }
 
 #start-button{
@@ -321,6 +321,5 @@
 }
 
 #home-container{
-    background-color: red;
     height: 100vh;
 }

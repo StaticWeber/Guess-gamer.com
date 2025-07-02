@@ -52,8 +52,8 @@ for(const video of videos){
 
        <div id="video-container">
 
-      <video src={video1} controls className='videos' width={430}></video>
-      <video src={video2} controls className='videos' width={430}></video>
+      <video src={video1} controls className='videos' width={380}></video>
+      <video src={video2} controls className='videos' width={380}></video>
 
        </div>
 
