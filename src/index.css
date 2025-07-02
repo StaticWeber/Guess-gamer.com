@@ -12,7 +12,7 @@
     left: 31.5em;
 }
 
-.head{
+#responsive-container{
     display: none;
 }
 
@@ -33,6 +33,11 @@
 .nav-bar ul li{
     display: inline-block;
     margin-right: 2em;
+}
+
+.nav-bar ul li a{
+    text-decoration: none;
+    color: black;
 }
 
 #start-button{
@@ -121,9 +126,23 @@
     top: 16em;
  }
 
+ #round-Id{
+    bottom: 23em;
+    right: 15.7em;
+}
+
+ #info{
+    position: absolute;
+    top: 8em;
+ }
+
+ #start-button{
+    top: 14.5em;
+ }
+
  .box-container{
-    top: 25em;
-    left: 2.5em;
+    top: 29em;
+    left: 2.9em;
  }
 
  .box{
@@ -134,18 +153,13 @@
  }
  
 #guide{
-    bottom: 10em;
+    bottom: 7em;
     left: 6em;
 }
 
 #total{
     right: auto;
     bottom: 2em;
-}
-
-#round-Id{
-    bottom: 22.5em;
-    right: 15.3em;
 }
 
 
@@ -160,9 +174,23 @@
     top: 16em;
  }
 
+ #round-Id{
+    bottom: 23em;
+    right: 17.3em;
+}
+
+ #info{
+    position: absolute;
+    top: 8em;
+ }
+
+ #start-button{
+    top: 14.3em;
+ }
+
  .box-container{
-    top: 25em;
-    left: 4em;
+    top: 29em;
+    left: 4.5em;
  }
 
  .box{
@@ -173,7 +201,7 @@
  }
  
 #guide{
-    bottom: 10em;
+    bottom: 7em;
     left: 6em;
 }
 
@@ -181,13 +209,6 @@
     right: auto;
     bottom: 2em;
 }
-
-#round-Id{
-    bottom: 22.5em;
-    right: 16.8em;
-}
-
-
 
 }
 
@@ -200,9 +221,23 @@
     top: 16em;
  }
 
+#round-Id{
+    bottom: 23em;
+    right: 17.6em;
+}
+
+ #info{
+    position: absolute;
+    top: 8em;
+ }
+
+ #start-button{
+    top: 14.3em;
+ }
+
  .box-container{
-    top: 25em;
-    left: 4.3em;
+    top: 29em;
+    left: 4.8em;
  }
 
  .box{
@@ -213,7 +248,7 @@
  }
  
 #guide{
-    bottom: 10em;
+    bottom: 6em;
     left: 6em;
 }
 
@@ -221,14 +256,6 @@
     right: auto;
     bottom: 2em;
 }
-
-#round-Id{
-    bottom: 22.5em;
-    right: 17.1em;
-}
-
-
-
 
 }
 
@@ -242,8 +269,22 @@
     top: 17em;
  }
 
+#round-Id{
+    bottom: 23em;
+    right: 18.8em;
+}
+
+#info{
+    position: absolute;
+    top: 8em;
+ }
+
+ #start-button{
+    top: 14.5em;
+ }
+
  .box-container{
-    top: 25em;
+    top: 29em;
     left: 6em;
  }
 
@@ -255,7 +296,7 @@
  }
  
 #guide{
-    bottom: 10em;
+    bottom: 6em;
     left: 6em;
 }
 
@@ -264,10 +305,22 @@
     bottom: 2em;
 }
 
-#round-Id{
-    bottom: 22.5em;
-    right: 18.8em;
+
 }
 
 
+
+/* Home styles */
+
+#home-welcome{
+    text-align: center;
+}
+
+#tips{
+    text-align: center;
+}
+
+#home-container{
+    background-color: red;
+    height: 100vh;
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 let countInt;
 
 
@@ -13,15 +14,6 @@ function Game(){
   let [value, setValue] = useState(0);
   let [counter, setCounter] = useState(0);
 
-
-    function valueCount(){
-      setInterval(() => {
-        setValue(value += 1);
-      }, 1000);
-    }
-
-
-    valueCount();
 
 
     useEffect(() => {
@@ -44,6 +36,11 @@ function Game(){
 
 
    function startFunction(){
+
+
+    setInterval(() => {
+        setValue(value += 1);
+      }, 1000);
       
      if(value >= 3 && value < 4  || value >= 13 && value < 14 || value >= 20 && value < 21){
            document.body.style.backgroundColor = ('red')
@@ -63,11 +60,14 @@ function Game(){
 
          }
 
-         countInt = setInterval(() =>{
+         
+   }
+  function Anonymous(){
+
+    countInt = setInterval(() =>{
             setCounter(counter += 1)
-         }, 1000);
-    
-        //  setRound('Round one');
+         }, 500);
+  
         setScore(0);
         setIsdisabled(true)
         setColor('grey');
@@ -78,11 +78,11 @@ function Game(){
         setIsdisabled(false);
         setColor('lime');
         setDisplayComponent1('none')
-      }, 95000);
+      }, 48000);
 
-   
-   }
+  }
 
+    
 
 
     function Redfunction(){
@@ -104,7 +104,7 @@ function Game(){
 
          } else if(value % 2 === 0){
            document.body.style.backgroundColor = ('green');
-           setResponse('Bad guess 👎')
+           setResponse('Bad guess👎')
 
          } 
 
@@ -144,7 +144,7 @@ function Game(){
 
         if(value >= 3 && value < 4  || value >= 13 && value < 14 || value >= 20 && value < 21){
            document.body.style.backgroundColor = ('yellow')
-           setResponse('Bad guess 👎')
+           setResponse('Bad guess👎')
 
          }  else{
 
@@ -201,13 +201,13 @@ function Game(){
 
         if(counter === 1){
            const rounder = document.getElementById('round-Id');
-           rounder.textContent = 'Round one ';
+           rounder.textContent = 'Round one';
 
         } else if(counter === 30){
           const rounder = document.getElementById('round-Id');
 
           setTimeout(() => {
-            rounder.textContent = 'Round two ';
+            rounder.textContent = 'Round two';
             
           }, 1000);
 
@@ -215,7 +215,7 @@ function Game(){
            const rounder = document.getElementById('round-Id');
            
           setTimeout(() => {
-            rounder.textContent = 'Round three ';
+            rounder.textContent = 'Round three';
             
           }, 1000);
 
@@ -224,14 +224,14 @@ function Game(){
            clearInterval(countInt);
 
            setTimeout(() => {
-            rounder.textContent = ' game over';
+            document.body.style.backgroundColor = 'white';
+            rounder.textContent = 'Round over';
             setCounter(0);
-            
-          }, 3000);
+            setValue(0);
+          }, 1000);
 
-          setValue(0);
-          console.log(value)
-           
+          
+          
         }
       });
 
@@ -269,28 +269,29 @@ function Game(){
     return(
 
       <>
+      <div id="game-container">
+
       <div className="intro-container" style={{ display: displayComponent2 }}>
         <h2>Color Guessing Game 😍</h2>
         <h5>Game loading...</h5>
       </div>
 
-        <header className="head" style={{ display: displayComponent3 }}>
+        <div id="responsive-container" style={{ display: displayComponent3 }}>
             <h1 id="logo">Guess Game</h1>
-            <h3></h3>
 
             <nav className="nav-bar">
 
             <ul>
-                <li>Home</li>
-                <li id="stats" onClick={Dev}>Statics</li>
-                <li id="about" onClick={Dev}>About</li>
+                <li id="home"><Link to="/">Home</Link></li>
+                <li id="media"><Link to="/media">Media</Link></li>
+                <li id="history" onClick={Dev}>Historia</li>
             </ul>
              
             </nav>
 
-            <main>
+            <div id="output-container">
                 <div className="box-container" style={{display: displayComponent1 }}>
-                  <h4 id="guide">Quick guide: <br/> Guess the next color.
+                  <h4 id="guide">Quick guide:<br/>Guess the next color.
                   <br/> Avoid tapping one color box repeatedly.
                   <br/> If this site malfunctions please reload the page.
                   </h4>
@@ -304,15 +305,23 @@ function Game(){
                 <button style={{ backgroundColor: color, color: 'grey'}} disabled={isdisabled} onClick={() => {
 
                   startFunction();
+                  Anonymous();
                   // handleDisable();
                   // handleColor();
 
                 }} id="start-button">Start</button>
+                <div id="info">
+                  
                 <p>Score:{score}</p>
                 <p>{response}</p>
                 <p>Counter:{counter}</p>
-            </main>
-        </header>
+
+                </div>
+                
+            </div>
+        </div>
+
+        </div>
 
         </>
     )
