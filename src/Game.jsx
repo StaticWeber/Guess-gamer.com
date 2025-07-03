@@ -148,6 +148,22 @@ function Game(){
         setDisplayComponent1('none');
         setDisplayComponent4('inline')
       }, 39000);
+
+    } else{
+
+      setCourier1('Easy');
+       countInt = setInterval(() =>{
+            setCounter(counter += 1)
+         }, 1000);
+
+         setDisplayComponent4('none');
+         setTimeout(() => {
+         setIsdisabled(false);
+         setColor('lime');
+         setDisplayComponent1('none');
+         setDisplayComponent4('inline')
+      }, 93000);
+      
     }
       
         setScore(0);
