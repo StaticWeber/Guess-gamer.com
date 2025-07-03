@@ -4,6 +4,9 @@ let countInt;
 
 
 function Game(){
+  const [courier1, setCourier1] = useState('');
+  const [courier2, setCourier2] = useState('');
+  const [courier3, setCourier3] = useState('');
   const [score, setScore] = useState(0);
   const [response, setResponse] = useState('');
   const [isdisabled, setIsdisabled] = useState(false);
@@ -11,6 +14,8 @@ function Game(){
   const [displayComponent1, setDisplayComponent1] = useState('none');
   const [displayComponent2, setDisplayComponent2] = useState('none');
   const [displayComponent3, setDisplayComponent3] = useState('none');
+  const [displayComponent4, setDisplayComponent4] = useState('none');
+
   let [value, setValue] = useState(0);
   let [counter, setCounter] = useState(0);
 
@@ -32,15 +37,18 @@ function Game(){
       }, 9000);
 
       setTimeout(() => {
-        setDisplayComponent3('grid')
+        setDisplayComponent4('inline');
       }, 10000);
+
+      setTimeout(() => {
+        setDisplayComponent3('grid');
+      }, 15000);
 
 
     }, [])
 
 
    function startFunction(){
-
 
     setInterval(() => {
         setValue(value += 1);
@@ -66,23 +74,89 @@ function Game(){
 
          
    }
+
+ 
+   function firstCourier(){
+    if(courier1 !== 'Easy'){
+      setCourier1('Easy');
+      setCourier2('--');
+      setCourier3('--');
+    }
+   }
+
+   function secondCourier(){
+    if(courier2 !== 'Medium'){
+      setCourier2('Medium');
+      setCourier1('--');
+      setCourier3('--');
+    }
+     
+   }
+
+   function thirdCourier(){
+    if(courier3 !== 'Hard'){
+     setCourier3('Hard');
+     setCourier1('--');
+     setCourier2('--');
+    }
+    
+   }
+
+
+  
+   
+
   function Anonymous(){
 
-    countInt = setInterval(() =>{
+    if(courier1 === 'Easy'){
+       countInt = setInterval(() =>{
             setCounter(counter += 1)
-         }, 500);
-  
+         }, 1000);
+
+         setDisplayComponent4('none');
+         setTimeout(() => {
+         setIsdisabled(false);
+         setColor('lime');
+         setDisplayComponent1('none');
+         setDisplayComponent4('inline')
+      }, 93000);
+
+    } else if(courier2 === 'Medium'){
+         countInt = setInterval(() =>{
+            setCounter(counter += 1)
+         }, 600);
+
+         setDisplayComponent4('none');
+        
+        setTimeout(() => {
+        setIsdisabled(false);
+        setColor('lime');
+        setDisplayComponent1('none');
+        setDisplayComponent4('inline')
+      }, 57000);
+
+    } else if(courier3 === 'Hard'){
+          countInt = setInterval(() =>{
+            setCounter(counter += 1)
+         }, 400);
+
+         setDisplayComponent4('none');
+
+        setTimeout(() => {
+        setIsdisabled(false);
+        setColor('lime');
+        setDisplayComponent1('none');
+        setDisplayComponent4('inline')
+      }, 39000);
+    }
+      
         setScore(0);
         setIsdisabled(true)
         setColor('grey');
 
         setDisplayComponent1('flex')
 
-        setTimeout(() => {
-        setIsdisabled(false);
-        setColor('lime');
-        setDisplayComponent1('none')
-      }, 48000);
+       
 
   }
 
@@ -242,17 +316,17 @@ function Game(){
 
       useEffect(() => {
         const total = document.getElementById('total');
-        if(counter === 90 && score < 50 ){
+        if(counter === 90 && score < 120 ){
           setTimeout(() => {
            total.textContent = `Your score ${score}: Poor`;
           }, 2000)
            
-        } else if(counter === 90 && score > 50 && score < 100){
+        } else if(counter === 90 && score > 120 && score < 200){
           setTimeout(() => {
            total.textContent = `Your score ${score}: Good`;
           }, 2000)
            
-        } else if(counter === 90 && score > 100){
+        } else if(counter === 90 && score > 200){
           setTimeout(() => {
             total.textContent = `Your score ${score}: Excellent`;
           }, 2000)
@@ -272,6 +346,17 @@ function Game(){
         <h5>Game loading...</h5>
       </div>
 
+      <div id="level-container" style={{ display: displayComponent4 }}>
+
+        <p id="easy-Id" className="levels" onClick={firstCourier}>Easy</p>
+        <p className="courier" id="courier1">{courier1}</p>
+        <p id="medium-Id" className="levels" onClick={secondCourier}>Med..</p>
+        <p className="courier" id="courier2">{courier2}</p>
+        <p id="hard-Id" className="levels" onClick={thirdCourier}>Hard</p>
+        <p className="courier" id="courier3">{courier3}</p>
+
+      </div>
+
         <div id="responsive-container" style={{ display: displayComponent3 }}>
             <h1 id="game-logo">Guess Game</h1>
 
@@ -279,7 +364,8 @@ function Game(){
 
             <ul>
                 <li id="home"><Link to="/">Home</Link></li>
-                <li id="media"><Link to="/historia">Historia</Link></li>
+                <li id="historia"><Link to="/historia">Historia</Link></li>
+                <li id="media"><Link to="/media">Media</Link></li>
               
             </ul>
              

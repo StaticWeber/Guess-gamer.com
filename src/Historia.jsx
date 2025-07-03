@@ -22,6 +22,7 @@ function Historia(){
 
                 <li id="home"><Link to="/">Home</Link></li>
                 <li id="game"><Link to="/game">Game</Link></li>
+                <li id="media"><Link to="/media">Media</Link></li>
             
             </ul>
             </nav>
@@ -32,17 +33,17 @@ function Historia(){
             
                <img src={pic1} className="images"></img>
                    <p>
-                     Do you know Russia is the largest country in the world in terms of land mass ?
+                     Do you know Russia is the largest country in the world in terms of land mass?
                    </p>
             
                     <img src={pic2} className="images"></img>
                      <p>
-                     Do you know America was colonized by britain ?
+                     Do you know America was colonized by britain?
                     </p>
             
                     <img src={pic3} className="images"></img>
                      <p>
-                     Do you know Nigeria is home the the largest christain and muslim population in Africa ?
+                     Do you know Nigeria is home the the largest christain and muslim population in Africa?
                      </p>
             
             
