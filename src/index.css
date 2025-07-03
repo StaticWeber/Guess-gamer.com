@@ -116,6 +116,10 @@
    
 }
 
+#video-container{
+    margin-bottom: 3em;
+}
+
 .videos{
     height: 100vh;
 }
