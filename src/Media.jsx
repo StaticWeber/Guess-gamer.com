@@ -1,32 +1,10 @@
-import video1 from './assets/wife.mp4';
-import video2 from './assets/trump.mp4';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
+
 function Media(){
 
-    useEffect(() => {
-        document.body.style.backgroundColor = 'black';
-        document.body.style.color = 'white';
-        const videos = document.getElementsByClassName('videos')
-
-        for (const video of videos){
-    video.addEventListener('click', () => {
-        video.muted = false;
-    })
-}
-
-
-for(const video of videos){
-    video.addEventListener('play', () => {
-        for(const otherVideo of videos){
-            if(otherVideo !== video){
-                otherVideo.pause()
-            }
-        }
-    });
-}
-    }, []);
+    
 
     function Dev(){
         window.alert('Page is under developement')
@@ -51,12 +29,6 @@ for(const video of videos){
         </div>
 
 
-       <div id="video-container">
-
-      <video src={video1} controls className='videos' width={360}></video>
-      <video src={video2} controls className='videos' width={360}></video>
-
-       </div>
 
        
        </>
@@ -65,3 +37,32 @@ for(const video of videos){
 
 
 export default Media;
+
+
+
+
+
+ //import video1 from './assets/wife.mp4';
+// import video2 from './assets/trump.mp4';
+
+// useEffect(() => {
+//         document.body.style.backgroundColor = 'white';
+//         const videos = document.getElementsByClassName('videos')
+
+//         for (const video of videos){
+//     video.addEventListener('click', () => {
+//         video.muted = false;
+//     })
+// }
+
+
+// for(const video of videos){
+//     video.addEventListener('play', () => {
+//         for(const otherVideo of videos){
+//             if(otherVideo !== video){
+//                 otherVideo.pause()
+//             }
+//         }
+//     });
+// }
+//     }, []);

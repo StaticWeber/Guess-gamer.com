@@ -281,7 +281,7 @@ function Game(){
       </div>
 
         <div id="responsive-container" style={{ display: displayComponent3 }}>
-            <h1 id="logo">Guess Game</h1>
+            <h1 id="game-logo">Guess Game</h1>
 
             <nav className="nav-bar">
 
