@@ -43,7 +43,7 @@ function Historia(){
             
                     <img src={pic3} className="images"></img>
                      <p>
-                     Do you know Nigeria is home the the largest christain and muslim population in Africa?
+                     Do you know Nigeria is home to the largest christain and muslim population in Africa?
                      </p>
             
             
