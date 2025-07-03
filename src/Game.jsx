@@ -262,14 +262,6 @@ function Game(){
         }
       })
 
-
-
-      function Dev(){
-        window.alert('Page is under developement')
-      }
-      
-
-
     return(
 
       <>
@@ -287,8 +279,8 @@ function Game(){
 
             <ul>
                 <li id="home"><Link to="/">Home</Link></li>
-                <li id="media"><Link to="/media">Media</Link></li>
-                <li id="history" onClick={Dev}>Historia</li>
+                <li id="media"><Link to="/historia">Historia</Link></li>
+              
             </ul>
              
             </nav>

@@ -1,42 +1,42 @@
-import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+// import { useEffect } from 'react';
 
 
-function Media(){
+// function Media(){
 
     
 
-    function Dev(){
-        window.alert('Page is under developement')
-      }
+//     function Dev(){
+//         window.alert('Page is under developement')
+//       }
       
 
-    return(
-        <>
+//     return(
+//         <>
         
-        <div id="media-container">
-        <h1 id="logo">Media</h1>
+//         <div id="media-container">
+//         <h1 id="logo">Media</h1>
 
-       <nav className="nav-bar">
+//        <nav className="nav-bar">
 
-            <ul>
-                <li id="home"><Link to="/">Home</Link></li>
-                <li id="game"><Link to="/game">Game</Link></li>
-                <li id="history" onClick={Dev}>Historia</li>
-            </ul>
+//             <ul>
+//                 <li id="home"><Link to="/">Home</Link></li>
+//                 <li id="game"><Link to="/game">Game</Link></li>
+//                 <li id="history" onClick={Dev}>Historia</li>
+//             </ul>
              
-            </nav>
-        </div>
+//             </nav>
+//         </div>
 
 
 
        
-       </>
-    )
-}
+//        </>
+//     )
+// }
 
 
-export default Media;
+// export default Media;
 
 
 

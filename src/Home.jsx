@@ -11,28 +11,21 @@ function Home(){
         document.body.style.color = 'white';
       }, []);
 
-
-
-
-    function Dev(){
-        window.alert('Page is under developement')
-      }
       
     return(
         <>
         <div id="home-container">
 
-        <h1 id="home-logo">Home Page</h1>
+        <h1 id="page-logo">Home Page</h1>
         
         <div id="head-div">
             <nav className="nav-bar">
             <ul>
                 <li id="game"><Link to="/game">Game</Link></li>
-                <li id="media"><Link to="/media">Media</Link></li>
-                <li id="historia" onClick={Dev}>Historia</li>
+                <li id="historia"><Link to="/historia">Historia</Link></li>
             </ul>
             </nav>
-           <h3 id="home-welcome"><span id="first-span">Welcome </span><span id="second-span">user</span></h3>
+           <h3 id="page-welcome"><span id="first-span">Welcome </span><span id="second-span">user</span></h3>
             </div>
 
             <div id="main-div">

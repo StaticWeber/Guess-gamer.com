@@ -124,12 +124,12 @@
    margin-top: 1em;
 }
 
-#home-logo{
+#page-logo{
     color: lime;
     text-align: center;
 }
 
-#home-welcome{
+#page-welcome{
     text-align: center;
 }
 
@@ -176,6 +176,8 @@
         width: 25.7em;
     }
 }
+
+
 
 
 
