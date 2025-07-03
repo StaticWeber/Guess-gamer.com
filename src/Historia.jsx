@@ -1,3 +1,4 @@
+import { useEffect  } from 'react';
 import pic1 from './assets/historia1.jpg';
 import pic2 from './assets/historia2.jpg';
 import pic3 from './assets/historia3.jpg';
@@ -5,10 +6,17 @@ import pic3 from './assets/historia3.jpg';
 import { Link } from 'react-router-dom'
 
 function Historia(){
+   
+     useEffect(() => {
+            window.alert('Gain historical knowledge on this page');
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
+          }, []);
+
     return(
-     <div id="historia-container">
-        <h1 id="page-logo">Historia Page</h1>
-        <div id="head-div">
+          <div id="historia-container">
+         <h1 id="page-logo">Historia Page</h1>
+          <div id="head-div">
             <nav className="nav-bar">
             <ul>
 
@@ -17,24 +25,24 @@ function Historia(){
             
             </ul>
             </nav>
-           <h3 id="page-welcome"><span id="first-span">Welcome </span><span id="second-span">user</span></h3>
+
             </div>
 
             <div id="main-div">
             
                <img src={pic1} className="images"></img>
                    <p>
-                     Black is always beautiful ❤️❤️
+                     Do you know Russia is the largest country in the world in terms of land mass ?
                    </p>
             
                     <img src={pic2} className="images"></img>
                      <p>
-                     Inner beauty radiates <br/> the outward ❤️❤️
+                     Do you know America was colonized by britain ?
                     </p>
             
                     <img src={pic3} className="images"></img>
                      <p>
-                     Man best friend <br/> they say ❤️❤️
+                     Do you know Nigeria is home the the largest christain and muslim population in Africa ?
                      </p>
             
             

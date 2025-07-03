@@ -7,6 +7,7 @@ import pic3 from './assets/media3.jpg';
 function Home(){
 
     useEffect(() => {
+      window.alert('Discover inspirational quotes and images on this page');
         document.body.style.backgroundColor = 'black';
         document.body.style.color = 'white';
       }, []);
@@ -25,7 +26,7 @@ function Home(){
                 <li id="historia"><Link to="/historia">Historia</Link></li>
             </ul>
             </nav>
-           <h3 id="page-welcome"><span id="first-span">Welcome </span><span id="second-span">user</span></h3>
+           
             </div>
 
             <div id="main-div">

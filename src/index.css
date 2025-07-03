@@ -40,6 +40,7 @@
 .nav-bar ul li a{
     text-decoration: none;
     color: purple;
+    font-weight: 600;
 }
 
 #start-button{
@@ -125,24 +126,13 @@
 }
 
 #page-logo{
-    color: lime;
-    text-align: center;
-}
-
-#page-welcome{
-    text-align: center;
-}
-
-#first-span{
     color: red;
-}
-
-#second-span{
-    color: lime;
+    text-align: center;
 }
 
 .images{
     width: 79em;
+    height: 100vh;
 }
 
 
