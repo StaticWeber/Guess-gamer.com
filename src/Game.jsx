@@ -15,6 +15,10 @@ function Game(){
   let [counter, setCounter] = useState(0);
 
 
+  useEffect(() => {
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
+  }, []);
 
     useEffect(() => {
 

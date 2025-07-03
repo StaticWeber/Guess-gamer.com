@@ -1,6 +1,12 @@
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function Home(){
+
+    useEffect(() => {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+      }, []);
 
     function Dev(){
         window.alert('Page is under developement')

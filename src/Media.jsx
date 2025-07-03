@@ -6,7 +6,8 @@ import { useEffect } from 'react';
 function Media(){
 
     useEffect(() => {
-        document.body.style.backgroundColor = 'white';
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
         const videos = document.getElementsByClassName('videos')
 
         for (const video of videos){
@@ -52,8 +53,8 @@ for(const video of videos){
 
        <div id="video-container">
 
-      <video src={video1} controls className='videos' width={380}></video>
-      <video src={video2} controls className='videos' width={380}></video>
+      <video src={video1} controls className='videos' width={360}></video>
+      <video src={video2} controls className='videos' width={360}></video>
 
        </div>
 
