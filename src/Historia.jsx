@@ -10,9 +10,9 @@ import { Link } from 'react-router-dom'
 function Historia(){
    
      useEffect(() => {
-             setInterval(() => {
+             setTimeout(() => {
                 window.alert('Discover historical knowledge on this page');
-             }, 50000)
+             }, 10000)
            
             document.body.style.backgroundColor = 'black';
             document.body.style.color = 'white';
