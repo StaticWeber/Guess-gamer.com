@@ -16,9 +16,10 @@ function Home(){
   const [react4, setReact4] = useState('');
 
     useEffect(() => {
-      //   setInterval(() => {
-      //   window.alert('Discover inspirational quotes and images on this page');
-      // }, 50000);
+      
+        setInterval(() => {
+        window.alert('Discover inspirational quotes and images on this page');
+      }, 50000);
 
         document.body.style.backgroundColor = 'black';
         document.body.style.color = 'white';

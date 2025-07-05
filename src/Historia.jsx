@@ -8,7 +8,10 @@ import { Link } from 'react-router-dom'
 function Historia(){
    
      useEffect(() => {
-            window.alert('Gain historical knowledge on this page');
+             setInterval(() => {
+                window.alert('Discover historical knowledge on this page');
+             }, 50000)
+           
             document.body.style.backgroundColor = 'black';
             document.body.style.color = 'white';
           }, []);
