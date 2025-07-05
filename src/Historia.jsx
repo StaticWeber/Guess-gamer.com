@@ -2,7 +2,9 @@ import { useEffect  } from 'react';
 import pic1 from './assets/historia1.jpg';
 import pic2 from './assets/historia2.jpg';
 import pic3 from './assets/historia3.jpg';
-
+const url1 = 'https://www.google.com/amp/s/www.gw2ru.com/basic-facts/231562-why-is-russia-so-big/amp';
+const url2 = 'https://www.britannica.com/topic/American-colonies';
+const url3 = 'https://cartomission.com/2021/08/12/Christianity-islam-nigeria';
 import { Link } from 'react-router-dom'
 
 function Historia(){
@@ -34,17 +36,17 @@ function Historia(){
 
             <div id="main-div">
             
-               <img src={pic1} className="images"></img>
+               <a href={url1} target='_blank' rel='norefere'><img src={pic1} className="images"></img></a>
                    <p>
                      Do you know Russia is the largest country in the world in terms of land mass?
                    </p>
             
-                    <img src={pic2} className="images"></img>
+                  <a href={url2} target='_blank' rel='norefere'><img src={pic2} className="images"></img></a> 
                      <p>
                      Do you know America was colonized by britain?
                     </p>
             
-                    <img src={pic3} className="images"></img>
+                    <a href={url3} target='_blank' rel='norefere'><img src={pic3} className="images"></img></a>
                      <p>
                      Do you know Nigeria is home to the largest christain and muslim population in Africa?
                      </p>
