@@ -36,17 +36,17 @@ function Historia(){
 
             <div id="main-div">
             
-               <a href={url1} target='_blank' rel='norefere'><img src={pic1} className="images"></img></a>
+               <a href={url1} target='_blank' rel='noreferrer'><img src={pic1} className="images"></img></a>
                    <p>
                      Do you know Russia is the largest country in the world in terms of land mass?
                    </p>
             
-                  <a href={url2} target='_blank' rel='norefere'><img src={pic2} className="images"></img></a> 
+                  <a href={url2} target='_blank' rel='noreferrer'><img src={pic2} className="images"></img></a> 
                      <p>
                      Do you know America was colonized by britain?
                     </p>
             
-                    <a href={url3} target='_blank' rel='norefere'><img src={pic3} className="images"></img></a>
+                    <a href={url3} target='_blank' rel='noreferrer'><img src={pic3} className="images"></img></a>
                      <p>
                      Do you know Nigeria is home to the largest christain and muslim population in Africa?
                      </p>
