@@ -4,9 +4,6 @@ let countInt;
 
 
 function Game(){
-  const [courier1, setCourier1] = useState('');
-  const [courier2, setCourier2] = useState('');
-  const [courier3, setCourier3] = useState('');
   const [score, setScore] = useState(0);
   const [response, setResponse] = useState('');
   const [isdisabled, setIsdisabled] = useState(false);
@@ -15,10 +12,37 @@ function Game(){
   const [displayComponent2, setDisplayComponent2] = useState('none');
   const [displayComponent3, setDisplayComponent3] = useState('none');
   const [displayComponent4, setDisplayComponent4] = useState('none');
+  const [displayComponent5, setDisplayComponent5] = useState('none');
 
   let [value, setValue] = useState(0);
   let [counter, setCounter] = useState(0);
 
+  function userStatus(){
+    if(localStorage.getItem('novice', 'user')){
+       setTimeout(() => {
+        //  window.alert('User status: Novice');
+       }, 7000);
+       
+    } else if(localStorage.getItem('amature', 'friend')){
+      setTimeout(() => {
+        // windows.alert('User status: Amature')
+      }, 7000);
+      
+    } else if(localStorage.getItem('master', 'lord')){
+      setTimeout(() => {
+        // windows.alert('User status: Master')
+      }, 7000);
+
+    } else{
+      localStorage.setItem('novice', 'user');
+      setTimeout(() => {
+        //  window.alert('User status: Novice');
+       }, 7000);
+    }
+     
+  }
+
+  userStatus();
 
   useEffect(() => {
     document.body.style.backgroundColor = 'white';
@@ -41,8 +65,8 @@ function Game(){
       }, 10000);
 
       setTimeout(() => {
-        setDisplayComponent3('grid');
-      }, 15000);
+        setDisplayComponent3('inline');
+      }, 9000);
 
 
     }, [])
@@ -76,109 +100,107 @@ function Game(){
    }
 
  
-   function firstCourier(){
-    if(courier1 !== 'Easy'){
-      setCourier1('Easy');
-      setCourier2('--');
-      setCourier3('--');
-    }
+   function Easy(){
+    localStorage.setItem('easy-key', 'Easy');
+    setDisplayComponent5('inline');
+    setDisplayComponent4('none');
+    localStorage.removeItem('medium-key');
+    localStorage.removeItem('hard-key');
    }
 
-   function secondCourier(){
-    if(courier2 !== 'Medium'){
-      setCourier2('Medium');
-      setCourier1('--');
-      setCourier3('--');
-    }
-     
+   function Medium(){
+   localStorage.setItem('medium-key', 'Medium');
+    setDisplayComponent5('inline');
+    setDisplayComponent4('none');
+    localStorage.removeItem('easy-key');
+    localStorage.removeItem('hard-key');
    }
 
-   function thirdCourier(){
-    if(courier3 !== 'Hard'){
-     setCourier3('Hard');
-     setCourier1('--');
-     setCourier2('--');
-    }
-    
-   }
-
-
-  
-   
+   function Hard(){
+   localStorage.setItem('hard-key', 'Hard');
+   setDisplayComponent5('inline');
+   setDisplayComponent4('none');
+   localStorage.removeItem('easy-key');
+   localStorage.removeItem('medium-key');
+  }
 
   function Anonymous(){
 
-    if(courier1 === 'Easy'){
+    if(localStorage.getItem('easy-key')){
        countInt = setInterval(() =>{
             setCounter(counter += 1)
          }, 1000);
 
-         setDisplayComponent4('none');
+         setDisplayComponent1('inline');
+         setDisplayComponent3('none');
          setTimeout(() => {
          setIsdisabled(false);
          setColor('lime');
          setDisplayComponent1('none');
-         setDisplayComponent4('inline')
+         setDisplayComponent3('inline');
+         setDisplayComponent4('inline');
       }, 93000);
 
-    } else if(courier2 === 'Medium'){
+    } else if(localStorage.getItem('medium-key')){
          countInt = setInterval(() =>{
             setCounter(counter += 1)
          }, 600);
 
-         setDisplayComponent4('none');
+         setDisplayComponent1('inline');
+         setDisplayComponent3('none');
         
         setTimeout(() => {
         setIsdisabled(false);
         setColor('lime');
         setDisplayComponent1('none');
-        setDisplayComponent4('inline')
+        setDisplayComponent3('inline');
+        setDisplayComponent4('inline');
       }, 57000);
 
-    } else if(courier3 === 'Hard'){
+    } else if(localStorage.getItem('hard-key')){
           countInt = setInterval(() =>{
             setCounter(counter += 1)
          }, 400);
 
-         setDisplayComponent4('none');
+         setDisplayComponent1('inline');
+         setDisplayComponent3('none');
 
         setTimeout(() => {
         setIsdisabled(false);
         setColor('lime');
         setDisplayComponent1('none');
-        setDisplayComponent4('inline')
+        setDisplayComponent3('inline');
+        setDisplayComponent4('inline');
       }, 39000);
 
     } else{
-
-      setCourier1('Easy');
+      
        countInt = setInterval(() =>{
             setCounter(counter += 1)
          }, 1000);
 
-         setDisplayComponent4('none');
+         setDisplayComponent1('inline');
+         setDisplayComponent3('none');
+
          setTimeout(() => {
          setIsdisabled(false);
          setColor('lime');
          setDisplayComponent1('none');
-         setDisplayComponent4('inline')
+         setDisplayComponent3('inline');
+         setDisplayComponent4('inline');
       }, 93000);
       
     }
       
         setScore(0);
         setIsdisabled(true)
-        setColor('grey');
+        setColor('red');
 
         setDisplayComponent1('flex')
-
-       
 
   }
 
     
-
-
     function Redfunction(){
 
         if(value >= 3 && value < 4  || value >= 13 && value < 14 || value >= 20 && value < 21){
@@ -253,7 +275,7 @@ function Game(){
          } else if(value % 2 === 0){
            document.body.style.backgroundColor = ('green');
             setScore(score + 5);
-           setResponse('Good guess👍');
+            setResponse('Good guess👍');
 
          } 
 
@@ -333,16 +355,26 @@ function Game(){
       useEffect(() => {
         const total = document.getElementById('total');
         if(counter === 90 && score < 120 ){
+          localStorage.setItem('novice', 'user');
+          localStorage.setItem('amature', 'friend');
+          localStorage.removeItem('master', 'lord');
           setTimeout(() => {
            total.textContent = `Your score ${score}: Poor`;
           }, 2000)
            
         } else if(counter === 90 && score > 120 && score < 200){
+          localStorage.removeItem('novice', 'user');
+          localStorage.removeItem('master', 'lord');
+          localStorage.setItem('amature', 'friend');
+
           setTimeout(() => {
            total.textContent = `Your score ${score}: Good`;
           }, 2000)
            
         } else if(counter === 90 && score > 200){
+          localStorage.removeItem('novice', 'user');
+          localStorage.removeItem('amature', 'friend');
+          localStorage.setItem('master', 'lord');
           setTimeout(() => {
             total.textContent = `Your score ${score}: Excellent`;
           }, 2000)
@@ -350,26 +382,20 @@ function Game(){
         } else if(score === 0){
           total.textContent = '';
         }
-      })
+      });
+
 
     return(
 
       <>
       <div id="game-container">
 
-      <div className="intro-container" style={{ display: displayComponent2 }}>
-        <h2>Color Guessing Game 😍</h2>
-        <h5>Game loading...</h5>
-      </div>
-
       <div id="level-container" style={{ display: displayComponent4 }}>
 
-        <p id="easy-Id" className="levels" onClick={firstCourier}>Easy</p>
-        <p className="courier" id="courier1">{courier1}</p>
-        <p id="medium-Id" className="levels" onClick={secondCourier}>Med..</p>
-        <p className="courier" id="courier2">{courier2}</p>
-        <p id="hard-Id" className="levels" onClick={thirdCourier}>Hard</p>
-        <p className="courier" id="courier3">{courier3}</p>
+        <p id="easy-Id" className="levels" onClick={Easy}>Easy</p>
+        <p id="medium-Id" className="levels" onClick={Medium}>Med..</p>
+        <p id="hard-Id" className="levels" onClick={Hard}>Hard</p>
+        
 
       </div>
 
@@ -381,26 +407,35 @@ function Game(){
             <ul>
                 <li id="home"><Link to="/">Home</Link></li>
                 <li id="historia"><Link to="/historia">Historia</Link></li>
-                <li id="media"><Link to="/media">Media</Link></li>
-              
+        
             </ul>
              
             </nav>
 
+            </div>
+
+            <div className="intro-container" style={{ display: displayComponent2 }}>
+            <h2>Color Guessing Game 😍</h2>
+            <h5>Game loading...</h5>
+            </div>
+
             <div id="output-container">
-                <div className="box-container" style={{display: displayComponent1 }}>
+                <div className="box-container" style={{ display: displayComponent1 }}>
                   <h4 id="guide">Quick guide:<br/>Guess the next color.
                   <br/> Avoid tapping one color box repeatedly.
-                  <br/> If this site malfunctions please reload the page.
+                  <br/> How good can you guess? 😍
                   </h4>
                   <h4 className="box" id="red" onClick={Redfunction}></h4>
                   <h4 className="box" id="blue" onClick={Bluefunction}></h4>
                   <h4 className="box" id="green" onClick={Greenfunction}></h4>
                   <h4 className="box" id="yellow" onClick={Yellowfunction}></h4>
-                  <h4 id="round-Id"></h4>
                   <h3 id="total"></h3>
                 </div>
-                <button style={{ backgroundColor: color, color: 'grey'}} disabled={isdisabled} onClick={() => {
+
+                </div>
+
+                <div id="start-container" style={{ display: displayComponent5 }}>
+                <button style={{ backgroundColor: color, color: 'black'}} disabled={isdisabled} onClick={() => {
 
                   startFunction();
                   Anonymous();
@@ -409,16 +444,15 @@ function Game(){
 
                 }} id="start-button">Start</button>
                 <div id="info">
-                  
+                 <h4 id="round-Id"></h4>
                 <p>Score:{score}</p>
                 <p>{response}</p>
                 <p>Counter:{counter}</p>
 
                 </div>
-                
-            </div>
-        </div>
 
+                </div>
+                
         </div>
 
         </>

@@ -27,7 +27,6 @@ function Historia(){
 
                 <li id="home"><Link to="/">Home</Link></li>
                 <li id="game"><Link to="/game">Game</Link></li>
-                <li id="media"><Link to="/media">Media</Link></li>
             
             </ul>
             </nav>
